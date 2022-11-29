@@ -1,0 +1,82 @@
+﻿<Window x:Class="Stroitelstvo.WindowFolder.StaffFolder.AddStaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stroitelstvo.WindowFolder.StaffFolder"
+        mc:Ignorable="d"
+        Title="Окно добавление" Height="450" Width="650"
+        MaxHeight="450" MaxWidth="450"
+        MinHeight="550" MinWidth="650"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Image Style="{DynamicResource LogoImage}"
+               Grid.Column="1" Grid.Row="1"/>
+        <Label Content="Добавить заказ" Grid.Row="1" Grid.Column="2"
+               Grid.ColumnSpan="3"
+               Style="{DynamicResource HeadingLabel}"/>
+        <Label Content="Номер дома" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="3"/>
+        <TextBox x:Name="HouseNumberTb" Grid.Row="3" Grid.Column="2"/>
+
+        <Label Content="Номер" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="5"/>
+        <TextBox x:Name="NumberTb" Grid.Row="5" Grid.Column="2"/>
+        <Label Content="Общая площадь" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="7"/>
+        <TextBox x:Name="TotalAreaTb" Grid.Row="7" Grid.Column="2"/>
+        <Label Content="Жилая площадь" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="1" Grid.Row="9"/>
+        <TextBox x:Name="LivingAreaTb" Grid.Row="9" Grid.Column="2"/>
+        <Label Content="Номер квартиры" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="3"/>
+        <TextBox x:Name="NumberOfRoomsTb" Grid.Row="3" Grid.Column="4"/>
+        <Label Content="Цена" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="5"/>
+        <TextBox x:Name="CostTb" Grid.Row="5" Grid.Column="4"/>
+
+        <Label Content="Статус" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="7"/>
+        <ComboBox x:Name="StatusCb" Grid.Row="7" Grid.Column="4"
+                  SelectedItem="{Binding Status}"
+                          DisplayMemberPath="StatusName"
+                          SelectedValuePath="IdStatus"/>
+        <Label Content="ЖК" Style="{DynamicResource OrdinaryLabel}"
+               Grid.Column="3" Grid.Row="9"/>
+        <ComboBox x:Name="JKCb" Grid.Row="9" Grid.Column="4"
+                  SelectedItem="{Binding JK}"
+                          DisplayMemberPath="Name"
+                          SelectedValuePath="IdJK"/>
+        <Button x:Name="AddBtn" Content="Добавить"
+                Grid.Column="3" Grid.Row="11" 
+                Grid.ColumnSpan="2"
+                Click="AddBtn_Click" 
+                />
+        <Button x:Name="BackBtn" Content="Назад" Grid.Column="1"
+                Grid.Row="11" Grid.ColumnSpan="2"
+                Click="BackBtn_Click"  />
+    </Grid>
+</Window>
